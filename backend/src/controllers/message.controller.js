@@ -93,7 +93,7 @@ export async function sendMessage(req, res) {
       image: imageUrl,
       video: videoUrl,
     });
-
+ 
     await newMessage.save();
 
     const receiverSocketId = getReceiverSocketId(receiverId);
