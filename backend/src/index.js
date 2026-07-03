@@ -1,4 +1,4 @@
-import express from "express";
+import express from "express"
 import "dotenv/config"
 import User from "./models/user.model.js";
 import { connectDB } from "./lib/db.js";
@@ -10,7 +10,7 @@ import job from "./lib/cron.js";
 import clerkWebhook from "./webhooks/clerk.webhook.js";
 import authRoutes from "./routes/auth.route.js"
 import messageRoutes from "./routes/message.route.js"
-import { server } from "./lib/socket.js";
+import { app, server } from "./lib/socket.js";
 
 
 const PORT = process.env.PORT
@@ -22,7 +22,7 @@ app.use("/api/webhooks/clerk", express.raw({type: "application/json"}), clerkWeb
 
 
 app.use(express.json())
-app.use(cors({origin:FRONTEND_URL,Credential:true}))
+app.use(cors({origin:FRONTEND_URL, credentials:true}))
 app.use(clerkMiddleware())
 
 app.get("/health" , (req,res) => {
