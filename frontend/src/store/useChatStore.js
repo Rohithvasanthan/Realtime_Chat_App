@@ -25,7 +25,7 @@ export const useChatStore = create(
       getUsers: async () => {
         set({ isUsersLoading: true });
         try {
-          const res = await axiosInstance.get("/messages/users");
+          const res = await axiosInstance.get("/message/users");
           set((state) => ({
             users: res.data,
             selectedUser:
@@ -43,7 +43,7 @@ export const useChatStore = create(
       getConversations: async () => {
         set({ isConversationsLoading: true });
         try {
-          const res = await axiosInstance.get("/messages/conversations");
+          const res = await axiosInstance.get("/message/conversations");
           set({ conversations: res.data });
         } catch (error) {
           console.log("Error in getConversations", error.message);
@@ -56,7 +56,7 @@ export const useChatStore = create(
         if (!userId) return;
         set({ isMessagesLoading: true });
         try {
-          const res = await axiosInstance.get(`/messages/${userId}`);
+          const res = await axiosInstance.get(`/message/${userId}`);
           set({ messages: res.data });
         } catch (error) {
           toast.error(error.response?.data?.message || "Failed to load messages");
@@ -70,7 +70,7 @@ export const useChatStore = create(
         if (!selectedUser) return false;
 
         try {
-          const res = await axiosInstance.post(`/messages/send/${selectedUser._id}`, messageData);
+          const res = await axiosInstance.post(`/message/send/${selectedUser._id}`, messageData);
           set({ messages: [...messages, res.data], composerText: "" });
           get().getConversations();
           return true;
