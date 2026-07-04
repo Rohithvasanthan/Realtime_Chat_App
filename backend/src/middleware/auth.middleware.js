@@ -13,9 +13,17 @@ export async function protectRoute(req, res, next) {
 
     console.log("Clerk User ID:", userId);
 
-    const user = await User.findOne({
-      clerkId: userId,
-    });
+    console.log("Connected DB:", User.db.name);
+console.log("Collection:", User.collection.name);
+
+const allUsers = await User.find({});
+console.log("ALL USERS:", allUsers);
+
+const user = await User.findOne({
+  clerkId: userId,
+});
+
+console.log("FOUND USER:", user);
 
     console.log("Mongo User:", user);
 
