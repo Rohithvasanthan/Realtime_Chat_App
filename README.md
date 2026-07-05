@@ -1,3 +1,4 @@
+
 <div align="center">
 
 # 💬 Real-Time Chat Application
@@ -686,6 +687,8 @@ Special thanks to the amazing technologies and platforms that made this project 
 If you enjoyed exploring this project,
 
 🌟 **Don't forget to Star the repository!**
+
+Final Year Computer Science student
 
 Made with ❤️ by **Rohith Vasanthan E**
 
