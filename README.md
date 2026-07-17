@@ -690,6 +690,6 @@ If you enjoyed exploring this project,
 
 Final Year Computer Science student
 
-Made with ❤️ by **Rohith Vasanthan E**
+Made  ❤️ by **Rohith Vasanthan E**
 
 </div>
